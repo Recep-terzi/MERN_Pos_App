@@ -1,5 +1,12 @@
+import Header from "./components/Header/Header";
+
 function App() {
-  return <></>;
+  return (
+    <>
+      <Header />
+      adasds
+    </>
+  );
 }
 
 export default App;
