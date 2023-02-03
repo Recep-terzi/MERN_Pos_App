@@ -69,7 +69,7 @@ const CartTotals = () => {
             className="w-full mt-2 flex flex-row items-center justify-center"
             icon={<ClearOutlined />}
           >
-            Sipariş Oluştur
+            Temizle
           </Button>
         </div>
       </div>
