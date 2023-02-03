@@ -9,6 +9,7 @@ import {
   LogoutOutlined,
 } from "@ant-design/icons";
 import { Badge, Input } from "antd";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="border-b mb-6 w-[1440px] max-w-[96%] ml-auto mr-auto">
@@ -35,13 +36,13 @@ const Header = () => {
             <span className="md:text-[12px] text-[10px]">Anasayfa</span>
           </a>
           <Badge count={2} offset={[0, 6]} className="md:flex hidden">
-            <a
-              href="/"
+            <Link
+              to="/cart"
               className="menu-link flex flex-col hover:text-[#40a9ff] transition-all"
             >
               <ShoppingCartOutlined className="md:text-2xl text-xl" />
               <span className="md:text-[12px] text-[10px]">Sepet</span>
-            </a>
+            </Link>
           </Badge>
 
           <a
