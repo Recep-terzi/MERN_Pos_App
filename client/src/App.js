@@ -3,6 +3,7 @@ import BillPage from "./pages/BillPage";
 import CartPage from "./pages/CartPage";
 import CustomerPage from "./pages/CustomerPage";
 import HomePage from "./pages/HomePage";
+import StatisticPage from "./pages/StatisticPage";
 function App() {
   return (
     <>
@@ -11,6 +12,7 @@ function App() {
         <Route path="/cart" element={<CartPage />}></Route>
         <Route path="/bills" element={<BillPage />}></Route>
         <Route path="/customers" element={<CustomerPage />}></Route>
+        <Route path="/statistic" element={<StatisticPage />}></Route>
       </Routes>
     </>
   );
