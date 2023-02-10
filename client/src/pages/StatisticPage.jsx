@@ -63,9 +63,7 @@ const StatisticPage = () => {
             image={productImage}
           />
         </div>
-        <div>
-          <Area {...config} />
-        </div>
+        <div></div>
       </div>
     </>
   );
