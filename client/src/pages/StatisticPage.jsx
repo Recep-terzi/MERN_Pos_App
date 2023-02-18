@@ -6,7 +6,7 @@ import moneyImage from "../assets/money.png";
 import saleImage from "../assets/sale.png";
 import productImage from "../assets/product.png";
 import { Area } from "@ant-design/plots";
-
+import { Pie } from "@ant-design/plots";
 const StatisticPage = () => {
   const [data, setData] = useState([]);
 
@@ -31,6 +31,68 @@ const StatisticPage = () => {
       range: [0, 1],
     },
   };
+  const data2 = [
+    {
+      type: "分类一",
+      value: 27,
+    },
+    {
+      type: "分类二",
+      value: 25,
+    },
+    {
+      type: "分类三",
+      value: 18,
+    },
+    {
+      type: "分类四",
+      value: 15,
+    },
+    {
+      type: "分类五",
+      value: 10,
+    },
+    {
+      type: "其他",
+      value: 5,
+    },
+  ];
+  const config2 = {
+    appendPadding: 10,
+    data: data2,
+    angleField: "value",
+    colorField: "type",
+    radius: 1,
+    innerRadius: 0.6,
+    label: {
+      type: "inner",
+      offset: "-50%",
+      content: "{value}",
+      style: {
+        textAlign: "center",
+        fontSize: 14,
+      },
+    },
+    interactions: [
+      {
+        type: "element-selected",
+      },
+      {
+        type: "element-active",
+      },
+    ],
+    statistic: {
+      title: false,
+      content: {
+        style: {
+          whiteSpace: "pre-wrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+        },
+        content: "AntV\nG2Plot",
+      },
+    },
+  };
 
   return (
     <>
@@ -41,7 +103,7 @@ const StatisticPage = () => {
           Hoşgeldin{" "}
           <span className="text-green-700 font-bold text-xl">admin.</span>
         </h2>
-        <div className="statistic-cards grid grid-cols-4 my-10 gap-10">
+        <div className="statistic-cards grid xl:grid-cols-4 md:grid-cols-2 my-10 md:gap-10 gap-4">
           <StatisticCard
             title={"Toplam Müşteri"}
             amount={"6"}
@@ -63,7 +125,14 @@ const StatisticPage = () => {
             image={productImage}
           />
         </div>
-        <div></div>
+        <div className="flex justify-between gap-10 lg:flex-row flex-col items-center">
+          <div className="lg:w-1/2 lg:h-full h-72">
+            <Area {...config} />
+          </div>
+          <div className="lg:w-1/2 lg:h-full h-72">
+            <Pie {...config2} />
+          </div>
+        </div>
       </div>
     </>
   );
